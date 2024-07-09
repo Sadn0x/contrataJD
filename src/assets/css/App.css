@@ -142,3 +142,114 @@ svg:hover {
     transform: rotateY(360deg);
   }
 }
+
+
+/* SearchBar */
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: -15px;
+
+  input{
+    height: 40px;
+    width: 350px!important;
+
+    font-size: 18px;
+    padding: 5px 10px;
+    width: 100%;
+    padding-right: 10px;
+    outline: none;
+    background: #fafafa;
+    color: #B3B3B3;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    transition: .3s ease;
+
+    &:focus {
+      background: #F2F2F2;
+      border: 1px solid #FF5171;
+      border-radius: 3px;
+
+      
+    }
+    &::placeholder {
+      color: #B3B3B3;
+    }
+  }
+
+  svg {
+    position: relative;
+    right: 30px;
+    cursor: pointer;
+  }
+
+}
+
+.searchBarMobile {
+  margin-top: -3px!important;
+  
+  svg {
+    right: 0px;
+  }
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+}
+
+.topMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+svg {
+  cursor: pointer;
+}
+
+/* Profile */
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+
+  img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  h6 {
+    color: #161E54;
+    font-size: 1rem;
+  }
+
+  svg {
+    &:hover {
+      path {
+        fill: none;
+      }
+    }
+  }
+}
+
+.hasNotification {
+  background-color: var(--main-color);
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: relative;
+  right: -13px;
+  border-radius: 50%;
+  top: 8px;
+}

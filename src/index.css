@@ -25,8 +25,13 @@
   --secondary-text-color: #686868;
 }
 
+
+html {
+  overflow-x: hidden!important;
+}
+
 body {
   margin: 0;
 
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 }

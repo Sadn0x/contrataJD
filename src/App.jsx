@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 import Logo from './Components/Root/Logo'
 import Divider from './Components/Root/Divider'
+import Profile from './Components/Root/Profile'
 
 
 import './assets/css/App.css'
@@ -15,12 +16,19 @@ import EmployeeIcon from './Components/Root/Icons/EmployeeIcon'
 import DepartmentIcon from './Components/Root/Icons/DepartmentIcon'
 import SupportIcon from './Components/Root/Icons/SupportIcon'
 import SettingsIcon from './Components/Root/Icons/SettingsIcon'
+import SearchIcon from './Components/Root/Icons/SearchIcon'
+import NotificationIcon from './Components/Root/Icons/NotificationIcon'
+import ChatIcon from './Components/Root/Icons/ChatIcon'
 import Preloader from './Components/Root/Preloader'
+
+import UserImage from './assets/images/UserImage/UserImage.jpg'
+import TopMenu from './Components/Root/TopMenu'
 
 function App() {
 
   const screenWidth = window.screen.width
 
+  /* Menu State */
   const [menuState,useMenuState] = useState('active')
   const MenuStateChange = () => {
     if (menuState === 'active') {
@@ -28,6 +36,7 @@ function App() {
     } return useMenuState('active')
   }
 
+  /* Preloader */
   useEffect(() => {
     const preloaderOut = () => {
       const preloader = document.querySelector('.preloader');
@@ -37,16 +46,28 @@ function App() {
       if (preloader) {
         setTimeout(() => {
           preloader.style.top = '-100vh';
-        }, 4000);
+        }, 100);
       }
     };
     preloaderOut();
   }, []);
+
+  /* Content State */
+
   
+  /* Notification State */
+
+  const [notification, useNotification] = useState(true);
+  const hadNotification = () => {
+    if (notification === true) {
+      return useNotification(false)
+    } return useNotification(true)
+  }
+
+  /*<Preloader/>*/
 
   return (
     <>
-      <Preloader/>
       <main>
         <aside className={menuState === 'active' ? 'active' : ''}> 
           <Logo menuState={menuState} />
@@ -70,7 +91,14 @@ function App() {
         </aside>
         <section>
           <button className="toggleMenu" onClick={()=> MenuStateChange()}><MenuIcon/></button>
-          <p>Conteúdo Principal</p>
+          <div className="topBar">
+            <div className={screenWidth > 576 ? 'searchBar' : 'searchBar searchBarMobile'}>
+            {screenWidth > 576 ? <input type="text" name="Busca" placeholder='Busca' id="busca" /> : ''}
+              <SearchIcon/>
+            </div>
+
+            {screenWidth < 576 ? menuState === 'active' ? '' : <TopMenu hadNotification={hadNotification} notification={notification}  screenWidth={screenWidth}/> : <TopMenu hadNotification={hadNotification} notification={notification} screenWidth={screenWidth}/>}
+          </div>
         </section>
       </main>
     </>
