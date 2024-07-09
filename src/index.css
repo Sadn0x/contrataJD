@@ -17,4 +17,10 @@
 
   --main-color: #FF5151;
 
+  --bg-menu-lateral: #686868;
+
+  --card-posicao: rgba(255, 81, 81, 0.3);
+  --card-vaga: rgba(55, 134, 241, 0.3);
+  --card-novos-funcionarios: rgba(253, 235, 249, 1);
+  
 }
