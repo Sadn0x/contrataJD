@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Logo from './Components/Root/Logo'
 import Divider from './Components/Root/Divider'
@@ -25,9 +25,34 @@ function App() {
     } return useMenuState('active')
   }
 
+  useEffect(() => {
+    const preloaderOut = () => {
+      const preloader = document.querySelector('.preloader');
+      if (preloader) {
+        setTimeout(() => {
+          preloader.style.top = '-100vh';
+        }, 4000);
+      }
+    };
+    preloaderOut();
+  }, []);
+  
 
   return (
     <>
+      <div className="preloader">
+        <span style={{ '--i': 1 }}>C</span>
+        <span style={{ '--i': 2 }}>o</span>
+        <span style={{ '--i': 3 }}>n</span>
+        <span style={{ '--i': 4 }}>t</span>
+        <span style={{ '--i': 5 }}>r</span>
+        <span style={{ '--i': 6 }}>a</span>
+        <span style={{ '--i': 7 }}>t</span>
+        <span style={{ '--i': 8 }}>a</span>
+        <span>&nbsp;</span>
+        <span style={{ '--i': 9 }}> ;</span>
+        <span style={{ '--i': 10 }}>D</span>
+      </div>
       <main>
         <aside className={menuState === 'active' ? 'active' : ''}> 
           <Logo menuState={menuState} />
