@@ -46,7 +46,7 @@ function App() {
       if (preloader) {
         setTimeout(() => {
           preloader.style.top = '-100vh';
-        }, 100);
+        }, 4000);
       }
     };
     preloaderOut();
@@ -64,10 +64,10 @@ function App() {
     } return useNotification(true)
   }
 
-  /*<Preloader/>*/
-
+  
   return (
     <>
+    <Preloader/>
       <main>
         <aside className={menuState === 'active' ? 'active' : ''}> 
           <Logo menuState={menuState} />
