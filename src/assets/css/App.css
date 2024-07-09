@@ -1,0 +1,107 @@
+main {
+  display: flex;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+
+  width: 90px;
+  height: 100vh;
+
+  background-color: var(--bg-menu-lateral);
+  transition: all ease-in-out .3s;
+
+  .sideMenu {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+}
+
+aside.active {
+  width: 242px;
+
+  .sideMenu {
+    padding-left: 20px;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+}
+
+section {
+  margin-left: 50px;
+}
+
+.sideMenu {
+  padding-left: 20px;
+
+  h4 {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  
+  h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+  }
+}
+
+.menuItem:hover {
+  cursor: pointer;
+  h5 {
+    color: var(--main-color);
+  }
+  svg {
+    path {
+      fill: var(--main-color);
+    }
+    rect {
+      fill: var(--main-color);
+    }
+  }
+}
+
+/* Toggle Menu */
+
+.toggleMenu {
+  position: relative;
+  cursor: pointer;
+  top: 30px;
+  left: -50px;
+
+  color: var(--main-color);
+
+  background-color: transparent;
+  border: none;
+}
+
+/* SVG's */
+
+svg:hover {
+  path {
+    fill: var(--main-color);
+  }
+}
+
+/* Hidden */
+
+.hidden {
+  display: none!important;
+}

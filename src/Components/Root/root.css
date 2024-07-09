@@ -1,0 +1,7 @@
+.logo {
+  color: var(--main-color);
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+  text-decoration: none;
+}
