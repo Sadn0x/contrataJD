@@ -15,8 +15,11 @@ import EmployeeIcon from './Components/Root/Icons/EmployeeIcon'
 import DepartmentIcon from './Components/Root/Icons/DepartmentIcon'
 import SupportIcon from './Components/Root/Icons/SupportIcon'
 import SettingsIcon from './Components/Root/Icons/SettingsIcon'
+import Preloader from './Components/Root/Preloader'
 
 function App() {
+
+  const screenWidth = window.screen.width
 
   const [menuState,useMenuState] = useState('active')
   const MenuStateChange = () => {
@@ -28,6 +31,9 @@ function App() {
   useEffect(() => {
     const preloaderOut = () => {
       const preloader = document.querySelector('.preloader');
+      if(screenWidth < 576) {
+        MenuStateChange();
+      }
       if (preloader) {
         setTimeout(() => {
           preloader.style.top = '-100vh';
@@ -40,19 +46,7 @@ function App() {
 
   return (
     <>
-      <div className="preloader">
-        <span style={{ '--i': 1 }}>C</span>
-        <span style={{ '--i': 2 }}>o</span>
-        <span style={{ '--i': 3 }}>n</span>
-        <span style={{ '--i': 4 }}>t</span>
-        <span style={{ '--i': 5 }}>r</span>
-        <span style={{ '--i': 6 }}>a</span>
-        <span style={{ '--i': 7 }}>t</span>
-        <span style={{ '--i': 8 }}>a</span>
-        <span>&nbsp;</span>
-        <span style={{ '--i': 9 }}> ;</span>
-        <span style={{ '--i': 10 }}>D</span>
-      </div>
+      <Preloader/>
       <main>
         <aside className={menuState === 'active' ? 'active' : ''}> 
           <Logo menuState={menuState} />
