@@ -3,6 +3,13 @@ import { useEffect, useState } from 'react'
 
 import Logo from './Components/Root/Logo'
 import Divider from './Components/Root/Divider'
+import Dashboard from './Components/Dashboard'
+import Recrutamento from './Components/Recrutamento'
+import Agendamento from './Components/Agendamento'
+import Colaboradores from './Components/Colaboradores'
+import Departamento from './Components/Departamento'
+import Suporte from './Components/Suporte'
+import Configuracoes from './Components/Configuracoes'
 
 
 import './assets/css/App.css'
@@ -50,7 +57,8 @@ function App() {
 
   /* Content State */
 
-  
+  const [content, useContent] = useState('Dashboard');
+
   /* Notification State */
 
   const [notification, useNotification] = useState(true);
@@ -62,29 +70,29 @@ function App() {
 
 
 
-  /*<Preloader/>*/
   
   return (
     <>
+    <Preloader/>
       <main>
         <aside className={menuState === 'active' ? 'active' : ''}> 
           <Logo menuState={menuState} />
           <Divider height={40}/>
           <div className="sideMenu">
             {menuState === 'active' ? <h4>Menu Principal</h4> : ''}
-            <div onClick={()=>{alert('Dashboard em desenvolvimento')}}>
+            <div onClick={()=>{useContent('Dashboard')}}>
             <MenuItem icon={<DashIcon/>} title='Dashboard' menuState={menuState} />
             </div >
-            <div onClick={()=>{alert('Recrutamento em desenvolvimento')}}>
+            <div onClick={()=>{useContent('Recrutamento')}}>
             <MenuItem icon={<RecruitmentIcon/>} title='Recrutamento' menuState={menuState} />
             </div>
-            <div onClick={()=>{alert('Agendamento em desenvolvimento')}}>
+            <div onClick={()=>{useContent('Agendamento')}}>
             <MenuItem icon={<CalendarIcon/>} title='Agendamento' menuState={menuState} />
             </div>
-            <div onClick={()=>{alert('Colaboradores em desenvolvimento')}}>
+            <div onClick={()=>{useContent('Colaboradores')}}>
             <MenuItem icon={<EmployeeIcon/>} title='Colaboradores' menuState={menuState} />
             </div>
-            <div onClick={()=>{alert('Departamento em desenvolvimento')}}>
+            <div onClick={()=>{useContent('Departamento')}}>
             <MenuItem icon={<DepartmentIcon/>} title='Departamento' menuState={menuState} />
             </div>
           </div>
@@ -92,8 +100,12 @@ function App() {
           <div className="sideMenu">
             {menuState === 'active' ? <h4>Outros</h4> : ''}
 
+            <div onClick={()=>{useContent('Suporte')}}>
             <MenuItem icon={<SupportIcon/>} title='Suporte' menuState={menuState} />
+            </div>
+            <div onClick={()=>{useContent('Configurações')}}>
             <MenuItem icon={<SettingsIcon/>} title='Configurações' menuState={menuState} />
+            </div>
           </div>
         </aside>
         <section>
@@ -109,6 +121,16 @@ function App() {
 
           <div className="divider"></div>
 
+          <Divider height={15}/>
+
+
+          {content === 'Agendamento' ? <Agendamento /> : ''}
+          {content === 'Colaboradores' ? <Colaboradores /> : ''}
+          {content === 'Configurações' ? <Configuracoes /> : ''}
+          {content === 'Dashboard' ? <Dashboard /> : ''}
+          {content === 'Departamento' ? <Departamento /> : ''}
+          {content === 'Recrutamento' ? <Recrutamento /> : ''}
+          {content === 'Suporte' ? <Suporte /> : ''}
           
         </section>
       </main>

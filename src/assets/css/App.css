@@ -245,7 +245,7 @@ svg {
   }
 
   h6 {
-    color: #161E54;
+    color: var(--blue-text-color);
     font-size: 1rem;
   }
 
