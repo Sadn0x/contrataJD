@@ -9,11 +9,11 @@ export default function TopMenu ({hadNotification, notification, screenWidth}) {
   return(
     <div className="topMenu">
       {screenWidth < 576 ? '' : <button onClick={()=>{hadNotification()}}>Toggle Notification</button>}
-      <div>
+      <div onClick={()=>{alert('Notificação em desenvolvimento')}}>
         <span className={ notification === true ? 'hasNotification' : ''}></span>
         <NotificationIcon />
       </div>
-      <div>
+      <div onClick={()=>{alert('Chat em desenvolvimento')}}>
         <span className={ notification === true ? 'hasNotification' : ''}></span>
         <ChatIcon/>
       </div>

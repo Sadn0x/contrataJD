@@ -72,12 +72,21 @@ function App() {
           <Divider height={40}/>
           <div className="sideMenu">
             {menuState === 'active' ? <h4>Menu Principal</h4> : ''}
-
+            <div onClick={()=>{alert('Dashboard em desenvolvimento')}}>
             <MenuItem icon={<DashIcon/>} title='Dashboard' menuState={menuState} />
+            </div >
+            <div onClick={()=>{alert('Recrutamento em desenvolvimento')}}>
             <MenuItem icon={<RecruitmentIcon/>} title='Recrutamento' menuState={menuState} />
+            </div>
+            <div onClick={()=>{alert('Agendamento em desenvolvimento')}}>
             <MenuItem icon={<CalendarIcon/>} title='Agendamento' menuState={menuState} />
+            </div>
+            <div onClick={()=>{alert('Colaboradores em desenvolvimento')}}>
             <MenuItem icon={<EmployeeIcon/>} title='Colaboradores' menuState={menuState} />
+            </div>
+            <div onClick={()=>{alert('Departamento em desenvolvimento')}}>
             <MenuItem icon={<DepartmentIcon/>} title='Departamento' menuState={menuState} />
+            </div>
           </div>
           <Divider height={40}/>
           <div className="sideMenu">
