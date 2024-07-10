@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 
 import Logo from './Components/Root/Logo'
 import Divider from './Components/Root/Divider'
-import Profile from './Components/Root/Profile'
 
 
 import './assets/css/App.css'
@@ -17,11 +16,8 @@ import DepartmentIcon from './Components/Root/Icons/DepartmentIcon'
 import SupportIcon from './Components/Root/Icons/SupportIcon'
 import SettingsIcon from './Components/Root/Icons/SettingsIcon'
 import SearchIcon from './Components/Root/Icons/SearchIcon'
-import NotificationIcon from './Components/Root/Icons/NotificationIcon'
-import ChatIcon from './Components/Root/Icons/ChatIcon'
 import Preloader from './Components/Root/Preloader'
 
-import UserImage from './assets/images/UserImage/UserImage.jpg'
 import TopMenu from './Components/Root/TopMenu'
 
 function App() {
@@ -64,10 +60,12 @@ function App() {
     } return useNotification(true)
   }
 
+
+
+  /*<Preloader/>*/
   
   return (
     <>
-    <Preloader/>
       <main>
         <aside className={menuState === 'active' ? 'active' : ''}> 
           <Logo menuState={menuState} />
@@ -99,6 +97,10 @@ function App() {
 
             {screenWidth < 576 ? menuState === 'active' ? '' : <TopMenu hadNotification={hadNotification} notification={notification}  screenWidth={screenWidth}/> : <TopMenu hadNotification={hadNotification} notification={notification} screenWidth={screenWidth}/>}
           </div>
+
+          <div className="divider"></div>
+
+          
         </section>
       </main>
     </>
