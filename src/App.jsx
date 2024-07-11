@@ -75,7 +75,7 @@ function App() {
     <>
     <Preloader/>
       <main>
-        <aside className={menuState === 'active' ? 'active' : ''}> 
+        <aside className={menuState === 'active' ? 'active' : ''} style={{position: 'relative'}}> 
           <Logo menuState={menuState} />
           <Divider height={40}/>
           <div className="sideMenu">
@@ -108,7 +108,7 @@ function App() {
             </div>
           </div>
         </aside>
-        <section>
+        <section style={{position: 'relative'}}>
           <button className="toggleMenu" onClick={()=> MenuStateChange()}><MenuIcon/></button>
           <div className="topBar">
             <div className={screenWidth > 576 ? 'searchBar' : 'searchBar searchBarMobile'}>

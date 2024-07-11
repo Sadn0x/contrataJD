@@ -7,7 +7,7 @@ aside {
   display: flex;
   flex-direction: column;
 
-  width: 70px;
+  min-width: 70px;
   height: 100vh;
 
   background-color: var(--bg-menu-lateral);
@@ -39,7 +39,7 @@ aside.active {
 
 @media (max-width: 576px) {
   aside.active {
-    width: 55%!important;
+    min-width: 180px!important;
     padding-right: 50px;
   }
 

@@ -36,3 +36,9 @@ body {
 
   overflow-x: hidden!important;
 }
+
+h2 {
+  color: var(--blue-text-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+}

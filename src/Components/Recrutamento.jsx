@@ -1,7 +1,9 @@
+import Title from './Root/Title'
+
 export default function Recrutamento () {
   return (
     <>
-      Recrutamento content
+      <Title title="Recrutamento" />
     </>
   )
 }

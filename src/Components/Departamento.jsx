@@ -1,7 +1,9 @@
+import Title from './Root/Title'
+
 export default function Departamento () {
   return (
     <>
-      Departamento content
+      <Title title="Departamento" />
     </>
   )
 }

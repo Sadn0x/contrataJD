@@ -1,7 +1,9 @@
+import Title from './Root/Title'
+
 export default function Configuracoes () {
   return (
     <>
-      Configurações content
+      <Title title="Configurações" />
     </>
   )
 }

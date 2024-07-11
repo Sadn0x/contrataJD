@@ -1,7 +1,9 @@
+import Title from './Root/Title'
+
 export default function Suporte () {
   return (
     <>
-      Suporte content
+      <Title title="Suporte" />
     </>
   )
 }

@@ -1,7 +1,9 @@
+import Title from './Root/Title'
+
 export default function Colaboradores () {
   return (
     <>
-      Colaboradores content
+      <Title title="Colaboradores" />
     </>
   )
 }
